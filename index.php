@@ -1,56 +1,53 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    
+    require_once 'clases.php';
 
-require_once 'clases.php';
+    // Obtener la acción del query string, 'list' por defecto
+    $action = isset($_GET['action']) ? $_GET['action'] : 'list';
 
-// Obtener la acción del query string, 'list' por defecto
-$action = isset($_GET['action']) ? $_GET['action'] : 'list';
+    // Variable para almacenar la tarea en edición
+    $tareaEnEdicion = null;
 
-// Variable para almacenar la tarea en edición
-$tareaEnEdicion = null;
+    // Variables para ordenamiento y filtrado
+    $sortField = isset($_GET['field']) ? $_GET['field'] : 'id';
+    $sortDirection = isset($_GET['direction']) ? $_GET['direction'] : 'ASC';
+    $filterEstado = isset($_GET['filterEstado']) ? $_GET['filterEstado'] : '';
 
-// Variables para ordenamiento y filtrado
-$sortField = isset($_GET['field']) ? $_GET['field'] : 'id';
-$sortDirection = isset($_GET['direction']) ? $_GET['direction'] : 'ASC';
-$filterEstado = isset($_GET['filterEstado']) ? $_GET['filterEstado'] : '';
+    $tareas = null;
 
-$tareas = null;
+    // Procesar la acción
+    switch ($action) {
+        case 'add':
+            // Los estudiantes deben implementar esta lógica
+            break;
 
-// Procesar la acción
-switch ($action) {
-    case 'add':
-        // Los estudiantes deben implementar esta lógica
-        break;
+        case 'edit':
+            // Los estudiantes deben implementar esta lógica
+            break;
 
-    case 'edit':
-        // Los estudiantes deben implementar esta lógica
-        break;
+        case 'delete':
+            // Los estudiantes deben implementar esta lógica
+            break;
 
-    case 'delete':
-        // Los estudiantes deben implementar esta lógica
-        break;
+        case 'status':
+            // Los estudiantes deben implementar esta lógica
+            break;
 
-    case 'status':
-        // Los estudiantes deben implementar esta lógica
-        break;
+        case 'filter':
+            // Los estudiantes deben implementar esta lógica
+            break;
 
-    case 'filter':
-        // Los estudiantes deben implementar esta lógica
-        break;
+        case 'list':
+        default:
+            // Por ahora, simplemente cargamos todas las tareas
+            break;
+    }
 
-    case 'list':
-    default:
-        // Por ahora, simplemente cargamos todas las tareas
-        break;
-}
-
-// Cargar las tareas si aún no se han cargado
-if ($tareas === null) {
-    $gestorTareas = new GestorTareas();
-    $tareas = $gestorTareas->cargarTareas();
-}
+    // Cargar las tareas si aún no se han cargado
+    if ($tareas === null) {
+        $gestorTareas = new GestorTareas();
+        $tareas = $gestorTareas->cargarTareas();
+    }
 
 ?>
 <!DOCTYPE html>
@@ -149,7 +146,8 @@ if ($tareas === null) {
                     <th><a href="index.php?action=sort&field=estado&direction=<?php echo $sortField == 'estado' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>">Estado <?php echo $sortField == 'estado' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
                     <th><a href="index.php?action=sort&field=prioridad&direction=<?php echo $sortField == 'prioridad' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>">Prioridad <?php echo $sortField == 'prioridad' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
                     <th><a href="index.php?action=sort&field=tipo&direction=<?php echo $sortField == 'tipo' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>">Tipo <?php echo $sortField == 'tipo' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
-                    <th><a href="index.php?action=sort&field=fechaCreacion&direction=<?php echo $sortField == 'fechaCreacion' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>">Fecha Creación <?php echo $sortField == 'fechaCreacion' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
+                    <th><a href="index.php?action=sort&field=detallesEspecificos<?php echo $sortField == 'detallesEspecificos' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>">Detalles Especificos <?php echo $sortField == 'detallesEspcificos' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
+                    th><<a href="index.php?action=sort&field=fechaCreacion&direction=<?php echo $sortField == 'fechaCreacion' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>">Fecha Creación <?php echo $sortField == 'fechaCreacion' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -162,6 +160,7 @@ if ($tareas === null) {
                         <td><?php echo $tarea->estado; ?></td>
                         <td><?php echo $tarea->prioridad; ?></td>
                         <td><?php echo $tarea->tipo; ?></td>
+                        <td><?php echo $tarea->detallesEspecificos; ?></td>
                         <td><?php echo $tarea->fechaCreacion; ?></td>
                         <td>
                             <a href='index.php?action=edit&id=<?php echo $tarea->id; ?>' class='btn btn-sm btn-warning'><i class='fas fa-edit'></i></a>

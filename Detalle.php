@@ -1,8 +1,8 @@
 <?php
 
-interface Detalle {
-    public function obtenerDetallesEspecificos(): string;
-}
+    interface Detalle {
+        public function obtenerDetallesEspecificos(): string;
+    }
 
 ?>
  

@@ -38,6 +38,21 @@ switch ($action) {
             $tipo = $_GET['tipo'];
 
             // Implementar la lógica para agregar el recurso al gestor
+            switch ($tipo) {
+                case 'Libro':
+                    $recurso = new Libro($_GET);
+                    break;
+                case 'Revista':
+                    $recurso = new Revista($_GET);
+                    break;
+                case 'DVD':
+                    $recurso = new DVD($_GET);
+                    break;
+            }
+
+            $recursos =  $gestorBiblioteca->agregarRecursos($recurso);
+
+           
         }
         break;
 

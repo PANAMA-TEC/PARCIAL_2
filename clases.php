@@ -60,9 +60,14 @@
 
         // Implementar los demás métodos aquí
 
-       
-        public function agregarRecursos(RecursoBiblioteca $recurso){
-            
+
+        public function agregarRecursos(RecursoBiblioteca  $recurso){
+
+        // Añadir el nuevo recurso al array
+           $this->recursos[] = $recurso;
+        
+           return $this-> recursos;
+
         }
 
 

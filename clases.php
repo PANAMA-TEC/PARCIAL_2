@@ -71,6 +71,12 @@
         }
 
     }
+
+    class Revista extends RecursoBiblioteca {
+
+    }
+
+    
     
 ?>
 

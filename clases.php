@@ -22,6 +22,14 @@
 
     // Implementar las clases Libro, Revista y DVD aquí
 
+    public interface Prestable {
+
+        public function obtenerDetallesPrestamo(): string {
+            
+        }
+
+    }
+
     class GestorBiblioteca {
 
         private $recursos = [];

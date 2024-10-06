@@ -22,11 +22,9 @@
 
     // Implementar las clases Libro, Revista y DVD aquí
 
-    public interface Prestable {
+    interface Prestable {
 
-        public function obtenerDetallesPrestamo(): string {
-            
-        }
+        public function obtenerDetallesPrestamo(): string;
 
     }
 
@@ -77,11 +75,11 @@
     }
 
 
-    public class Libro extends RecursoBiblioteca{
+    class Libro extends RecursoBiblioteca{
 
     }
 
-    public class Revista extends RecursoBiblioteca {
+    class Revista extends RecursoBiblioteca {
         
         public function obtenerDetallesPrestamo(): string {
 
@@ -92,7 +90,7 @@
 
     }
 
-    public class DVD extends RecursoBiblioteca {
+    class DVD extends RecursoBiblioteca {
 
     }
 

@@ -55,7 +55,8 @@
         }
 
 
-        public function actualizarRecurso ($recurso){
+        public function actualizarRecurso (RecursoBiblioteca $recurso){
+
             
         }
 
@@ -75,10 +76,17 @@
 
     }
 
+
     public class Libro extends RecursoBiblioteca{
 
     }
+
+    public class Revista extends RecursoBiblioteca {
+
+    }
+
     
+
 ?>
 
 

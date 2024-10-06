@@ -103,6 +103,21 @@ switch ($action) {
             $sortField = $_GET['field'];
             $sortDirection = $_GET['direction'];
             // Implementar la lógica para ordenar los recursos
+
+            if( $sortDirection == 'ASC'){
+                
+                usort($recursos, function($a, $b) use($sortField){
+                    return $a->$sortField <=> $b->$sortField;
+                });
+
+            }else{
+
+                usort($recursos, function($a, $b) use($sortField){
+                    return $b->$sortField <=> $a->$sortField;
+                });
+
+            }
+
         }
 
         break;

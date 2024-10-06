@@ -5,6 +5,13 @@ error_reporting(E_ALL);
 
 require_once 'clases.php';
 
+// Arreglo asociativo que mapea los estados
+$estadosLegibles = [
+    'disponible' => 'DISPONIBLE',
+    'prestado' => 'PRESTADO',
+    'en_reparacion' => 'EN REPARACIÓN',
+];
+
 // Obtener la acción del query string, 'list' por defecto
 $action = isset($_GET['action']) ? $_GET['action'] : 'list';
 
@@ -195,6 +202,7 @@ switch ($action) {
                         <td><?php echo $recurso->autor; ?></td>
                         <td><?php echo $recurso->anioPublicacion; ?></td>
                         <td><?php echo $recurso->estado; ?></td>
+                        <td><?php echo $estadosLegibles[$recurso->estado] ?? $recurso->estado; ?></td>
                         <td><?php echo $recurso->fechaAdquisicion; ?></td>
                         <td><?php echo $recurso->tipo; ?></td>
                         <td>

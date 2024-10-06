@@ -41,6 +41,9 @@
             
         }
 
+        public function actualizarRecurso ($recurso){
+            
+        }
 
         public function eliminarRecurso($id){
 

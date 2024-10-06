@@ -86,10 +86,15 @@ switch ($action) {
         break;
 
     case 'filter':
+        
         if (isset($_GET['filterEstado'])) {
             $filterEstado = $_GET['filterEstado'];
+
             // Implementar la lógica para filtrar los recursos por estado
+            $recursos = $gestorBiblioteca->buscarRecursosPorEstados($filterEstado);
+            
         }
+        
         break;
 
     case 'sort':
@@ -98,6 +103,7 @@ switch ($action) {
             $sortDirection = $_GET['direction'];
             // Implementar la lógica para ordenar los recursos
         }
+
         break;
 
     case 'list':
@@ -210,6 +216,8 @@ switch ($action) {
                 </tr>
             </thead>
             <tbody>
+
+
                 <?php foreach ($recursos as $recurso): ?>
                     <tr>
                         <td><?php echo $recurso->id; ?></td>
@@ -237,6 +245,8 @@ switch ($action) {
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
+
             </tbody>
         </table>
     </div>

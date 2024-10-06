@@ -38,6 +38,7 @@
             $json = file_get_contents('biblioteca.json');
             $data = json_decode($json, true);
             
+            
             foreach ($data as $recursoData) {
                 switch ($recursoData['tipo']) {
                     case 'Libro';
@@ -59,12 +60,14 @@
 
         // Implementar los demás métodos aquí
 
+
         public function agregarRecursos(RecursoBiblioteca  $recurso){
 
         // Añadir el nuevo recurso al array
            $this->recursos[] = $recurso;
         
            return $this-> recursos;
+
         }
 
 
@@ -84,8 +87,19 @@
 
         public function buscarRecursosPorEstados($estado){
 
+            $filtro = array_filter( $this -> recursos, function ($que_es_esto) use ($estado){
+                
+                if( $que_es_esto -> estado == $estado){
+                    return true;
+                }
+
+            });
+
+            return $filtro;
 
         }
+
+        
 
     }
 

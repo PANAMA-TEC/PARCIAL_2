@@ -37,11 +37,18 @@
 
         // Implementar los demás métodos aquí
 
-        agregarRecursos($jskjaksjalsjld){
+        agregarRecursos(RecursoBiblioteca $recurso){
             
         }
 
+
+        public function eliminarRecurso($id){
+
+        }
+        
+
         public function buscarRecursosPorEstados($estado){
+
 
         }
 

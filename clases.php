@@ -82,6 +82,13 @@
     }
 
     public class Revista extends RecursoBiblioteca {
+        
+        public function obtenerDetallesPrestamo(): string {
+
+            return "";
+            
+        }
+
 
     }
 

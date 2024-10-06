@@ -39,11 +39,23 @@
             $data = json_decode($json, true);
             
             foreach ($data as $recursoData) {
-                $recurso = new Libro ($recursoData);
+                switch ($recurso['tipo']) {
+                    case 'Libro';
+                    $recurso = new Libro($recursoData);
+                        break;
+                    case 'Revista';
+                    $recurso = new Libro($recursoData);
+                        break;
+                    case 'DVD';
+                    $recurso = new Libro($recursoData);
+                        break;
+                }
+                $recurso = new RecursoBiblioteca($recursoData);
                 $this->recursos[] = $recurso;
             }
             
             return $this->recursos;
+
         }
 
         // Implementar los demás métodos aquí

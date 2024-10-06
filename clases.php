@@ -1,100 +1,38 @@
 <?php
-// Archivo: clases.php
-
-class Tarea {
+class RecursoBiblioteca {
     public $id;
     public $titulo;
-    public $descripcion;
+    public $autor;
+    public $anioPublicacion;
     public $estado;
-    public $prioridad;
-    public $fechaCreacion;
+    public $fechaAdquisicion;
     public $tipo;
 
     public function __construct($datos) {
         foreach ($datos as $key => $value) {
-            $this->$key = $value;
+            if (property_exists($this, $key)) {
+                $this->$key = $value;
+            }
         }
     }
-
-    // Implementar estos getters
-    // public function getEstado() { }
-    // public function getPrioridad() { }
 }
 
-class GestorTareas {
-    private $tareas = [];
+// Implementar las clases Libro, Revista y DVD aquí
 
-    public function cargarTareas() {
-        $json = file_get_contents('tareas.json');
+class GestorBiblioteca {
+    private $recursos = [];
+
+    public function cargarRecursos() {
+        $json = file_get_contents('biblioteca.json');
         $data = json_decode($json, true);
-        foreach ($data as $tareaData) {
-            $tarea = new Tarea($tareaData);
-            $this->tareas[] = $tarea;
+        
+        foreach ($data as $recursoData) {
+            $recurso = new RecursoBiblioteca($recursoData);
+            $this->recursos[] = $recurso;
         }
         
-        return $this->tareas;
+        return $this->recursos;
     }
 
-
-    public function agregarTarea($tarea) {
-
-    }
-
-    public function eliminarTarea($id)  {
-
-    }
-
-    public function actualizarTarea($tarea)  {
-
-    }
-
-    public function actualizarEstadoTarea($id, $nuevoEstado)  {
-
-    }
-
-    public function buscarTareasPorEstado($estado)  {
-
-    }
-
-    public function listarTareas($filtroEstado = '')  {
-        
-    }
+    // Implementar los demás métodos aquí
 }
-
-class TareaDesarrollo extends Tarea{
-
-    private $lenguajeProgramacion = '';
-
-    public function obtenerDetallesEspecificos() {
-
-    }
-
-
-
-}
-
-
-
-class TareaDiseno extends Tarea{
-
-    private $herramientaDiseno = '';
-
-    public function obtenerDetallesEspecificos() {
-
-    }
-    
-}
-
-
-class TareaTesting extends Tarea{
-    
-   private $tipoTesr = '' ;
-
-  public function obtenerDetallesEspecificos() {
-
-  }
-}
-// Implementar:
-// 1. La interfaz Detalle
-// 2. Modificar la clase Tarea para implementar la interfaz Detalle
-// 3. Las clases TareaDesarrollo, TareaDiseno y TareaTesting que hereden de Tarea

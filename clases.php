@@ -1,5 +1,7 @@
 <?php
-    class RecursoBiblioteca {
+
+    abstract class RecursoBiblioteca implements Prestable {
+        
         public $id;
         public $titulo;
         public $autor;
@@ -15,6 +17,7 @@
                 }
             }
         }
+        
     }
 
     // Implementar las clases Libro, Revista y DVD aquí

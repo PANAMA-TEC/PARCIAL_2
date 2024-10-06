@@ -56,10 +56,14 @@
             
         }
 
+        public function actualizarEstadoRecurso ($id, $nuevoEstado){
+            
+        }
+
         public function eliminarRecurso($id){
 
         }
-        
+    
 
         public function buscarRecursosPorEstados($estado){
 

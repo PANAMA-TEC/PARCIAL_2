@@ -39,7 +39,7 @@
             $data = json_decode($json, true);
             
             foreach ($data as $recursoData) {
-                switch ($recurso['tipo']) {
+                switch ($recursoData['tipo']) {
                     case 'Libro';
                     $recurso = new Libro($recursoData);
                         break;
@@ -49,8 +49,7 @@
                     case 'DVD';
                     $recurso = new Libro($recursoData);
                         break;
-                }
-                $recurso = new RecursoBiblioteca($recursoData);
+                } 
                 $this->recursos[] = $recurso;
             }
             

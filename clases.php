@@ -77,7 +77,20 @@
         }
 
         public function actualizarEstadoRecurso ($id, $nuevoEstado){
-            
+           
+            $array_temporal = $this->recursos;
+
+            foreach ($array_temporal as $recurso){
+
+                if ($recurso->id === $id) {
+                    
+                    $recurso-> estado = $nuevoEstado;
+        
+                }
+            }
+        
+            return $array_temporal;
+
         }
 
         public function eliminarRecurso($id){

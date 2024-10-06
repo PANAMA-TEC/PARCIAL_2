@@ -83,6 +83,7 @@ switch ($action) {
             $id = intval($_GET['id']);
             $nuevoEstado = $_GET['estado'];
             // Implementar la lógica para cambiar el estado del recurso
+            $recursos = $gestorBiblioteca->actualizarEstadoRecurso($id, $nuevoEstado);
         }
         break;
 

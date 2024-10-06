@@ -79,6 +79,8 @@
 
     public class Libro extends RecursoBiblioteca{
 
+        public function obtenerDetallesPrestamo(): string
+
     }
 
     public class Revista extends RecursoBiblioteca {
@@ -93,6 +95,8 @@
     }
 
     public class DVD extends RecursoBiblioteca {
+
+        public function obtenerDetallesPrestamo(): string
 
     }
 

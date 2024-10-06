@@ -63,7 +63,7 @@
         public function eliminarRecurso($id){
 
         }
-        
+    
 
         public function buscarRecursosPorEstados($estado){
 

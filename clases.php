@@ -30,6 +30,8 @@
 
     }
 
+
+
     class GestorBiblioteca {
 
         private $recursos = [];
@@ -52,6 +54,7 @@
             
         }
 
+
         public function actualizarRecurso ($recurso){
             
         }
@@ -69,6 +72,10 @@
 
 
         }
+
+    }
+
+    public class Libro extends RecursoBiblioteca{
 
     }
     

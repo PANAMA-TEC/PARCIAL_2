@@ -20,6 +20,7 @@
     // Implementar las clases Libro, Revista y DVD aquí
 
     class GestorBiblioteca {
+
         private $recursos = [];
 
         public function cargarRecursos() {
@@ -40,8 +41,9 @@
             
         }
 
-        
+        public function buscarRecursosPorEstados($estado){
 
+        }
 
     }
     

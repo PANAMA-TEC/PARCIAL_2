@@ -77,7 +77,11 @@
 
     class Libro extends RecursoBiblioteca{
 
-        public function obtenerDetallesPrestamo(): string
+        public function obtenerDetallesPrestamo(): string{
+
+            return "";
+            
+        }
 
     }
 
@@ -94,7 +98,11 @@
 
     class DVD extends RecursoBiblioteca {
 
-        public function obtenerDetallesPrestamo(): string
+        public function obtenerDetallesPrestamo(): string {
+
+            return "";
+            
+        }
 
     }
 

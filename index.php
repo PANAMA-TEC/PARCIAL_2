@@ -59,14 +59,8 @@ switch ($action) {
         if (isset($_GET['id'])) {
             $id = intval($_GET['id']);
             // Implementar la lógica para eliminar el recurso
-            if ($gestorBiblioteca->eliminarRecurso($id)) {
-                echo "Recurso eliminado con éxito.";
-            } else {
-                echo "Error: No se pudo eliminar el recurso. Puede que no exista.";
-            }
-        } else {
-            echo "Error: ID no especificado.";
-        }
+            $gestorBiblioteca->eliminarRecurso($id);
+            echo "Recurso Eliminado";
         }
         break;
 

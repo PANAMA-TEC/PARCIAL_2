@@ -74,6 +74,10 @@ switch ($action) {
         if (isset($_GET['filterEstado'])) {
             $filterEstado = $_GET['filterEstado'];
             // Implementar la lógica para filtrar los recursos por estado
+            echo "<pre>";
+            print_r($gestorBiblioteca->buscarRecursosPorEstados($filterEstado));
+            echo "</pre>";
+
         }
         break;
 

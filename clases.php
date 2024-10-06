@@ -80,6 +80,14 @@
 
         public function buscarRecursosPorEstados($estado){
 
+            $filtro = array_filter($this ->recursos, function ($que_es_esto) use $ustado {
+                if( $que_es_esto['estado'] == $estado)
+                return true;
+
+            });
+
+            return $filtro;
+
 
         }
 

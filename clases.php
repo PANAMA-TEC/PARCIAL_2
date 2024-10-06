@@ -85,7 +85,9 @@
 
     }
 
-    
+    public class DVD extends RecursoBiblioteca {
+
+    }
 
 ?>
 

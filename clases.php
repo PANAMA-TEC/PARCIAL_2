@@ -52,7 +52,7 @@
             
         }
 
-        public function actualizarRecurso ($recurso){
+        public function actualizarRecurso (RecursoBiblioteca $recurso){
             
         }
 

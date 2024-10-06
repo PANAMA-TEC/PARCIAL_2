@@ -201,7 +201,6 @@ switch ($action) {
                         <td><?php echo $recurso->titulo; ?></td>
                         <td><?php echo $recurso->autor; ?></td>
                         <td><?php echo $recurso->anioPublicacion; ?></td>
-                        <td><?php echo $recurso->estado; ?></td>
                         <td><?php echo $estadosLegibles[$recurso->estado] ?? $recurso->estado; ?></td>
                         <td><?php echo $recurso->fechaAdquisicion; ?></td>
                         <td><?php echo $recurso->tipo; ?></td>

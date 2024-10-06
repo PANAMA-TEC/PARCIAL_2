@@ -37,7 +37,7 @@
 
         // Implementar los demás métodos aquí
 
-        agregarRecursos(RecursoBiblioteca $recurso){
+        public function agregarRecursos(RecursoBiblioteca $recurso){
             
         }
 

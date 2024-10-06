@@ -82,6 +82,17 @@
 
         public function eliminarRecurso($id){
 
+
+            $eliminar = array_filter($this -> recursos, function ($que_es_esto) use ($id){
+
+                $resultado = $que_es_esto -> id == $id;
+
+                return !$resultado;
+
+            });
+
+            return $eliminar;
+
         }
     
 
@@ -96,8 +107,6 @@
             return $filtro;
 
         }
-
-        
 
     }
 

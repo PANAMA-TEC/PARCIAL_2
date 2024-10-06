@@ -74,6 +74,7 @@ switch ($action) {
         if (isset($_GET['id'])) {
             $id = intval($_GET['id']);
             // Implementar la lógica para eliminar el recurso
+            $recursos = $gestorBiblioteca->eliminarRecurso($id);
         }
         break;
 

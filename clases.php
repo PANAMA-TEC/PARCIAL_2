@@ -39,7 +39,7 @@
             $data = json_decode($json, true);
             
             foreach ($data as $recursoData) {
-                $recurso = new RecursoBiblioteca($recursoData);
+                $recurso = new Libro ($recursoData);
                 $this->recursos[] = $recurso;
             }
             

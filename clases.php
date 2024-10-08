@@ -56,6 +56,10 @@ class GestorBlog {
         return $this->entradas;
     }
 
+    public function eliminarEntradas(Entrada $entrada) {
+        return $this->entradas;
+    }
+
     public function obtenerEntradas() {
         return $this->entradas;
     }

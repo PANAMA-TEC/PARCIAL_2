@@ -53,6 +53,10 @@
         file_put_contents('blog.json', json_encode($data, JSON_PRETTY_PRINT));
     }
 
+    public function editarEntradas(Entrada $entrada) {
+        return $this->entradas;
+    }
+
     public function obtenerEntradas() {
         return $this->entradas;
     }

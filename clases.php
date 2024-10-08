@@ -15,9 +15,19 @@ abstract class Entrada implements Detalle{
     }
 }
 
+
 class EntradaUnaColumna extends Entrada{
     public $titulo;
     public $descripcion;
+}
+
+
+ interface Detalle{
+
+    public function obtenerDetallesEspecificos(): string {
+
+    }
+
 }
 
 class GestorBlog {
@@ -46,4 +56,23 @@ class GestorBlog {
         return $this->entradas;
     }
 
-}   
+
+
+class EntradaDosColumnas extends Entrada {
+    $titulo1 = "";
+    $descripcion1 = "";
+    $titulo2 = "";
+    $descripcion2 = "";
+}
+
+class EntradaTresColumnas extends Entrada {
+    $titulo1 = "";
+    $descripcion1 = "";
+    $titulo2 = "";
+    $descripcion2 = "";
+    $titulo3 = "";
+    $descripcion3 = "";
+}
+
+?>
+

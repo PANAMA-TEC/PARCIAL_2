@@ -5,37 +5,52 @@ interfaces, manejo de arreglos, y uso de funciones predefinidas.
 Instrucciones:
 1. Creen una interfaz llamada Detalle con el siguiente método:
 obtenerDetallesEspecificos(): string
+
 2. Implementen las siguientes clases en el archivo clases.php:
-a. Clase abstracta Entrada que implemente la interfaz Detalle, con los siguientes
-atributos comunes:
-1. id (entero)
-2. fecha_creacion (cadena en formato 'YYYY-MM-DD')
-3. tipo (entero: 1, 2 o 3, representando el número de columnas)
-b. Clase EntradaUnaColumna que herede de Entrada, con los atributos
-adicionales:
-1. titulo (cadena)
-2. descripcion (cadena)
-c. Clase EntradaDosColumnas que herede de Entrada, con los atributos
-adicionales:
-1. titulo1 (cadena)
-2. descripcion1 (cadena)
-3. titulo2 (cadena)
-4. descripcion2 (cadena)
-d. Clase EntradaTresColumnas que herede de Entrada, con los atributos
-adicionales:
-1. titulo1 (cadena)
-2. descripcion1 (cadena)
-3. titulo2 (cadena)
-4. descripcion2 (cadena)
-5. titulo3 (cadena)
-6. descripcion3 (cadena)
+
+    a. Clase abstracta Entrada que implemente la interfaz Detalle, con los siguientes
+    atributos comunes:
+    1. id (entero)
+    2. fecha_creacion (cadena en formato 'YYYY-MM-DD')
+    3. tipo (entero: 1, 2 o 3, representando el número de columnas)
+
+    b. Clase EntradaUnaColumna que herede de Entrada, con los atributos
+    adicionales:
+        1. titulo (cadena)
+        2. descripcion (cadena)
+
+    c. Clase EntradaDosColumnas que herede de Entrada, con los atributos
+    adicionales:
+        1. titulo1 (cadena)
+        2. descripcion1 (cadena)
+        3. titulo2 (cadena)
+        4. descripcion2 (cadena)
+
+    d. Clase EntradaTresColumnas que herede de Entrada, con los atributos
+    adicionales:
+        1. titulo1 (cadena)
+        2. descripcion1 (cadena)
+        3. titulo2 (cadena)
+        4. descripcion2 (cadena)
+        5. titulo3 (cadena)
+        6. descripcion3 (cadena)
+
+
+
+
+
+
+
+
 3. Implementen el método obtenerDetallesEspecificos() en cada clase hija de
 Entrada:
-1. Para EntradaUnaColumna: Retornar "Entrada de una columna: [titulo]"
-2. Para EntradaDosColumnas: Retornar "Entrada de dos columnas: [titulo1]
-| [titulo2]"
-3. Para EntradaTresColumnas: Retornar "Entrada de tres columnas: [titulo1]
-| [titulo2] | [titulo3]"
+    1. Para EntradaUnaColumna: Retornar "Entrada de una columna: [titulo]"
+    2. Para EntradaDosColumnas: Retornar "Entrada de dos columnas: [titulo1]
+    | [titulo2]"
+    3. Para EntradaTresColumnas: Retornar "Entrada de tres columnas: [titulo1]
+    | [titulo2] | [titulo3]"
+
+
 4. En la clase GestorBlog, implementen los siguientes métodos:
 1. agregarEntrada(Entrada $entrada): Agrega una nueva entrada.
 2. editarEntrada(Entrada $entrada): Actualiza una entrada existente.

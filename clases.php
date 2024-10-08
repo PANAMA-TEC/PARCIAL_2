@@ -55,4 +55,13 @@ class EntradaDosColumnas extends Entrada {
     $descripcion2 = "";
 }
 
+class EntradaTresColumnas extends Entrada {
+    $titulo1 = "";
+    $descripcion1 = "";
+    $titulo2 = "";
+    $descripcion2 = "";
+    $titulo3 = "";
+    $descripcion3 = "";
+}
+
 ?>

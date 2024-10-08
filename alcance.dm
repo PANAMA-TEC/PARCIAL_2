@@ -35,13 +35,6 @@ obtenerDetallesEspecificos(): string
         5. titulo3 (cadena)
         6. descripcion3 (cadena)
 
-
-
-
-
-
-
-
 3. Implementen el método obtenerDetallesEspecificos() en cada clase hija de
 Entrada:
     1. Para EntradaUnaColumna: Retornar "Entrada de una columna: [titulo]"
@@ -50,24 +43,30 @@ Entrada:
     3. Para EntradaTresColumnas: Retornar "Entrada de tres columnas: [titulo1]
     | [titulo2] | [titulo3]"
 
-
 4. En la clase GestorBlog, implementen los siguientes métodos:
-1. agregarEntrada(Entrada $entrada): Agrega una nueva entrada.
-2. editarEntrada(Entrada $entrada): Actualiza una entrada existente.
-3. eliminarEntrada($id): Elimina una entrada por su ID.
-4. obtenerEntrada($id): Obtiene una entrada específica por su ID.
-5. moverEntrada($id, $direccion): Mueve una entrada hacia arriba o abajo
-en la lista.
+    1. agregarEntrada(Entrada $entrada): Agrega una nueva entrada.
+    2. editarEntrada(Entrada $entrada): Actualiza una entrada existente.
+
+    3. eliminarEntrada($id): Elimina una entrada por su ID.
+    4. obtenerEntrada($id): Obtiene una entrada específica por su ID.
+    
+    5. moverEntrada($id, $direccion): Mueve una entrada hacia arriba o abajo
+    en la lista.
+
 5. En el archivo index.php, implementen la lógica para manejar las diferentes
 acciones en el switch statement:
-1. 'add': Agrega una nueva entrada al blog según el tipo seleccionado.
-2. 'edit': Modifica una entrada existente.
-3. 'delete': Elimina una entrada.
-4. 'move_up' y 'move_down': Reordena las entradas.
+    1. 'add': Agrega una nueva entrada al blog según el tipo seleccionado.
+    2. 'edit': Modifica una entrada existente.
+    3. 'delete': Elimina una entrada.
+    4. 'move_up' y 'move_down': Reordena las entradas.
+
 6. En el archivo index.php, reemplacen la impresión de la propiedad titulo, por el
 resultado de la ejecución del método obtenerDetallesEspecificos().
+
 7. Implementen un manejo básico de errores para parámetros inválidos o acciones
 no reconocidas.
+
+
 Restricciones:
 1. Todo el manejo de datos persistentes debe hacerse a través del archivo JSON
 blog.json.

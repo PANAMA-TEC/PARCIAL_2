@@ -9,6 +9,7 @@
         public $estado;
         public $fechaAdquisicion;
         public $tipo;
+        public $obtenerDetallesPrestamo;
 
         public function __construct($datos) {
             foreach ($datos as $key => $value) {

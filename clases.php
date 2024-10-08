@@ -19,6 +19,12 @@ abstract class Entrada implements Detalle{
 class EntradaUnaColumna extends Entrada{
     public $titulo;
     public $descripcion;
+
+    public function obtenerDetallesEspecificos(): string {
+
+        return $"Entrada de una columna: " .$titulo;
+        
+    }
 }
 
 
@@ -63,6 +69,12 @@ class EntradaDosColumnas extends Entrada {
     $descripcion1 = "";
     $titulo2 = "";
     $descripcion2 = "";
+
+    public function obtenerDetallesEspecificos(): string {
+
+        return "Entrada de dos columnas: " .$titulo1. " ".$titulo2;
+        
+    }
 }
 
 class EntradaTresColumnas extends Entrada {
@@ -72,6 +84,12 @@ class EntradaTresColumnas extends Entrada {
     $descripcion2 = "";
     $titulo3 = "";
     $descripcion3 = "";
+
+    public function obtenerDetallesEspecificos(): string {
+        
+        return "Entrada de tres columnas: " .$titulo1. " ".$titulo2." ".$titulo3 ;
+        
+    }
 }
 
 ?>

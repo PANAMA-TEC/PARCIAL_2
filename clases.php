@@ -45,4 +45,14 @@ class GestorBlog {
     public function obtenerEntradas() {
         return $this->entradas;
     }
-}   
+}  
+
+
+class EntradaDosColumnas extends Entrada {
+    $titulo1 = "";
+    $descripcion1 = "";
+    $titulo2 = "";
+    $descripcion2 = "";
+}
+
+?>

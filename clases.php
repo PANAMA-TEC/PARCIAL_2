@@ -22,7 +22,7 @@ class EntradaUnaColumna extends Entrada{
 
     public function obtenerDetallesEspecificos(): string {
 
-        return $"Entrada de una columna: " .$titulo;
+        return "Entrada de una columna: " .$titulo;
         
     }
 }

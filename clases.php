@@ -1,5 +1,5 @@
 <?php
-class Entrada {
+abstract class Entrada implements Detalle{
     public $id;
     public $fecha_creacion;
     public $tipo;
@@ -15,11 +15,19 @@ class Entrada {
     }
 }
 
+
+class EntradaUnaColumna extends Entrada{
+    public $titulo;
+    public $descripcion;
+}
+
+
  interface Detalle{
 
     public function obtenerDetallesEspecificos(): string {
 
     }
+
 }
 
 class GestorBlog {
@@ -35,6 +43,8 @@ class GestorBlog {
         }
     }
 
+
+
     public function guardarEntradas() {
         $data = array_map(function($entrada) {
             return get_object_vars($entrada);
@@ -45,7 +55,7 @@ class GestorBlog {
     public function obtenerEntradas() {
         return $this->entradas;
     }
-}  
+
 
 
 class EntradaDosColumnas extends Entrada {
@@ -65,3 +75,4 @@ class EntradaTresColumnas extends Entrada {
 }
 
 ?>
+

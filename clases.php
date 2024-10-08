@@ -15,6 +15,13 @@ class Entrada {
     }
 }
 
+ interface Detalle{
+
+    public function obtenerDetallesEspecificos(): string {
+
+    }
+}
+
 class GestorBlog {
     private $entradas = [];
 

@@ -65,7 +65,9 @@
         return $this->entradas;
     }
 
-
+    public function moverEntrada($id, $direccion) {
+        return $this->entradas;
+    }
 
     class EntradaDosColumnas extends Entrada {
         $titulo1 = "";

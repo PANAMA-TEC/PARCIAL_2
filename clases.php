@@ -1,5 +1,6 @@
 <?php
-    abstract class Entrada implements Detalle{
+    
+  abstract class Entrada implements Detalle{
         public $id;
         public $fecha_creacion;
         public $tipo;
@@ -16,10 +17,18 @@
     }
 
 
-    class EntradaUnaColumna extends Entrada{
-        public $titulo;
-        public $descripcion;
-    }
+
+  class EntradaUnaColumna extends Entrada{
+      public $titulo;
+      public $descripcion;
+
+      public function obtenerDetallesEspecificos(): string {
+
+          return "Entrada de una columna: " .$titulo;
+
+      }
+  }
+
 
 
     interface Detalle{
@@ -63,21 +72,35 @@
 
 
 
-    class EntradaDosColumnas extends Entrada {
-        $titulo1 = "";
-        $descripcion1 = "";
-        $titulo2 = "";
-        $descripcion2 = "";
-    }
 
-    class EntradaTresColumnas extends Entrada {
-        $titulo1 = "";
-        $descripcion1 = "";
-        $titulo2 = "";
-        $descripcion2 = "";
-        $titulo3 = "";
-        $descripcion3 = "";
-    }
+  class EntradaDosColumnas extends Entrada {
+      $titulo1 = "";
+      $descripcion1 = "";
+      $titulo2 = "";
+      $descripcion2 = "";
+
+      public function obtenerDetallesEspecificos(): string {
+
+          return "Entrada de dos columnas: " .$titulo1. " ".$titulo2;
+
+      }
+  }
+
+  class EntradaTresColumnas extends Entrada {
+      $titulo1 = "";
+      $descripcion1 = "";
+      $titulo2 = "";
+      $descripcion2 = "";
+      $titulo3 = "";
+      $descripcion3 = "";
+
+      public function obtenerDetallesEspecificos(): string {
+
+          return "Entrada de tres columnas: " .$titulo1. " ".$titulo2." ".$titulo3 ;
+
+      }
+  }
+
 
 ?>
 

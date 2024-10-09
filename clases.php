@@ -90,14 +90,19 @@
 
         public function eliminarEntradas($id) {
        
-        $this->entradas = array_filter($this->entradas, function($entrada) use ($id) {
-            return $entrada->id !== $id; 
-        });
-        $this->entradas = array_values($this->entradas);
+            $this->entradas = array_filter( $this->entradas, function($entrada) use ($id) {
+                return $entrada->id != $id; 
+            });
 
-        $this->guardarEntradas();
-    
-        return $this->entradas;
+            // echo "<pre>";
+            // print_r($this->entradas);
+            // echo "</pre>";
+
+            $this->entradas = array_values($this->entradas);
+
+            $this->guardarEntradas();
+            
+            return $this->entradas;
         }
 
         public function obtenerEntradas() {

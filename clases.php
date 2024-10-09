@@ -70,7 +70,15 @@
         return $this->entradas;
     }
 
-    public function eliminarEntradas(Entrada $entrada) {
+    public function eliminarEntradas($id) {
+       
+        $this->entradas = array_filter($this->entradas, function($entrada) use ($id) {
+            return $entrada->id !== $id; 
+        });
+        $this->entradas = array_values($this->entradas);
+
+        $this->guardarEntradas();
+    
         return $this->entradas;
     }
 

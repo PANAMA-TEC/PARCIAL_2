@@ -18,7 +18,7 @@
     }
 
     class EntradaUnaColumna extends Entrada {
-        public $titulo;
+        public $titulo1;
         public $descripcion;
 
         public function obtenerDetallesEspecificos(): string {

@@ -17,8 +17,6 @@
         }
     }
 
-
-
     class EntradaUnaColumna extends Entrada {
         public $titulo;
         public $descripcion;
@@ -29,8 +27,6 @@
 
         }
     }
-
-
 
     interface Detalle {
 
@@ -96,7 +92,6 @@
         }
     }
 
-
     class EntradaDosColumnas extends Entrada {
         public $titulo1 = "";
         public $descripcion1 = "";
@@ -124,7 +119,6 @@
 
         }
     }
-
 
 ?>
 

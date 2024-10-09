@@ -26,6 +26,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+switch($action){
+    case 'add':
+        if (isset($_GET['titulo']) && isset($_GET['tipo']) && isset($_GET['fecha_creacion'])) {
+            $titulo = $_GET['titulo'];
+            $tipo = $_GET['tipo'];
+            $fecha_creacion = intval($_GET['fecha_creacion']);
+        }
+        break;
+    case 'edit':
+        break;
+    case 'delete':
+        break;
+    case 'move_up':
+        break;
+    case 'move_down':
+        break;
+}
+
 if ($action === 'delete' && isset($_GET['id'])) {
     // Implementar la lógica
     $mensaje = "Entrada eliminada con éxito.";

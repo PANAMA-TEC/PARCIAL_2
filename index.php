@@ -32,8 +32,27 @@ switch($action){
             $titulo = $_GET['titulo'];
             $tipo = $_GET['tipo'];
             $fecha_creacion = intval($_GET['fecha_creacion']);
+        
+             // Implementar la lógica para agregar el recurso al gestor
+
+             switch ($tipo) {
+        
+                case '1':
+                   $this ->$entradas = new EntradaUnoColumnas($_GET);
+                    break;
+                case '2':
+                    $this ->$entradas = new EntradaDosColumnas($_GET);
+                    break;
+                case '3':
+                    $this ->$entradas = new EntradaTresColumnas($_GET);
+                    break;
+            }
+            
+            $this ->$entradas[] =  $gestorBlog->agregarEntrada($entrada);
         }
+
         break;
+
     case 'edit':
         break;
     case 'delete':

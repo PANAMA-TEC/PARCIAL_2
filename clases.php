@@ -17,7 +17,7 @@
         }
     }
 
-    class EntradaUnaColumna extends Entrada {
+    class EntradaUnaColumnas extends Entrada {
         public $titulo1;
         public $descripcion;
 
@@ -41,9 +41,26 @@
             if (file_exists('blog.json')) {
                 $json = file_get_contents('blog.json');
                 $data = json_decode($json, true);
+                
+
                 foreach ($data as $entradaData) {
+
+                    switch ($entradaData['tipo']) {
+                        case 1;
+                            $this->entradas[] = new EntradaUnaColumnas($entradaData);
+                            break;
+                        case 2;
+                            $this->entradas[] = new EntradaDosColumnas($entradaData);
+                            break;
+                        case 3;
+                            $this->entradas[] = new EntradaTresColumnas($entradaData);
+                            break;
+                    } 
+
+                   
+                   
                     #$this->entradas[] = new Entrada($entradaData);
-                    $this->entradas[] = new EntradaUnaColumna($entradaData);
+                    #$this->entradas[] = new EntradaUnaColumna($entradaData);
                 }
             }
         }

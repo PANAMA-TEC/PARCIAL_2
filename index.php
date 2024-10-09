@@ -37,6 +37,11 @@ switch($action){
     case 'edit':
         break;
     case 'delete':
+        if (isset($_GET['id'])) {
+            $id = intval($_GET['id']);
+            // Implementar la lógica para eliminar el recurso
+            $entradas = $gestorBlog->eliminarEntradas($id);
+        } 
         break;
     case 'move_up':
         break;
